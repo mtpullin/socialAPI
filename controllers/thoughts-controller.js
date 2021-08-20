@@ -4,8 +4,15 @@ const thoughtController = {
     addThought({params, body}, res){
         Thought.create(body)
         .then(dbThoughtData => {
+            User.findOneAndUpdate(
+                {_id: body.userId},
+                {$push: {thoughts: dbThoughtData._id}},
+                {new: true}
+            )
+        })
+        .then(dbThoughtData => {
             if(!dbThoughtData){
-                res.status(404).json({message: 'no thought found'})
+                res.status(404).json({message: 'no user found'})
             }
             res.json(dbThoughtData)
         })

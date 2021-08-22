@@ -14,7 +14,7 @@ router.route('/:id')
 .get(getOneThought)
 .delete(removeThought)
 .put(updateThought)
-router.route('/:thoughtId/reactions')
+router.route('/:thoughtId/reactions/')
 .post(addReaction)
 .delete(removeReaction)
 

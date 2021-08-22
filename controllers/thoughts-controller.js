@@ -35,17 +35,18 @@ const thoughtController = {
             User.findOneAndUpdate(
                 {_id: body.userId},
                 {$push: {thoughts: dbThoughtData._id}},
-                {new: true, runValidators: true}
+                {new: true}
             )
-        })
-        .then(dbThoughtData => {
-            if(!dbThoughtData){
+        .then(dbUserData => {
+            if(!dbUserData){
                 res.status(404).json({message: 'no user found'})
                 return
             }
-            res.json(dbThoughtData)
+            res.json(dbUserData)
         })
         .catch(err=> res.json(err))
+        })
+        .catch(err=> res.status(400).json(err))
     },
     updateThought({params, body},res){
         Thought.findOneAndUpdate({_id: params.id},body,{new:true})
@@ -75,7 +76,7 @@ const thoughtController = {
     },
 
     removeThought({params}, res){
-        Thought.findOneAndDelete({_id: params.thoughtId})
+        Thought.findOneAndDelete({_id: params.id})
         .then(deletedThought => {
             if(!deletedThought){
                 res.status(404).json({message: 'no thought with this id'})

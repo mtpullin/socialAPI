@@ -3,10 +3,7 @@
   ## Table Of Contents
   ### [Description](#description)
   ### [Installation](#installation)
-  ### [Usage](#usage)
   ### [License](#license)
-  ### [Credits](#credits)
-  ### [Tests](#tests)
   ### [Questions](#questions)
 
   ## Description
@@ -15,18 +12,16 @@
   ## Installation
   npm install required files and use npm start to run the application 
 
-  ## Credits
-   
+  ![image](https://user-images.githubusercontent.com/82049270/130368781-6d73c96e-bf51-493b-9de9-386d6611a142.png)
+
 
   ## License
   MIT 
   ![badge](https://img.shields.io/badge/license-MIT-red)
   
-  ## Tests
-  undefined
+  
 
-  ## Usage
-  project intended for a class project 
+
 
   ## Questions
   
